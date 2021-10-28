@@ -9,6 +9,11 @@ ARG DOMAIN
 ARG REGION
 ARG REPO
 
+RUN echo $CODEARTIFACT_TOKEN
+RUN echo $DOMAIN
+RUN echo $REGION
+RUN echo $REPO
+
 COPY . /
 
 #Manually configure the PIP client with the authenthication token
