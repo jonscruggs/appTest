@@ -110,7 +110,7 @@ pipeline {
               sh "aws cloudformation deploy \
               --stack-name $AWS_STACK_NAME \
               --template-file application.yml \
-              --parameter-overrides ImageTag=$BUILD_ID \
+              --parameter-overrides SubnetA=subnet-0bd02e4809ccca9a0 SubnetB=subnet-08d9cbcdf325814cf VPC=vpc-05a05fbec626a90a9 ImageTag=$BUILD_ID \
               --capabilities CAPABILITY_NAMED_IAM"
           }
         }
