@@ -46,12 +46,13 @@ pipeline {
 
           //Pass the CodeArtifact token as an argument to Docker build
           //Using docker build command directly intead of the docker.build() function to conceal the token from logs
-          echo "Running docker build..."
+//           --build-arg DOMAIN=$AWS_CA_DOMAIN-$AWS_ACCOUNT_ID \ 
+         echo "Running docker build..."
           sh ("""
             set +x
             docker build -t $CONTAINER_NAME:$BUILD_NUMBER \
             --build-arg CODEARTIFACT_TOKEN='$authToken' \
-            --build-arg DOMAIN=$AWS_CA_DOMAIN-$AWS_ACCOUNT_ID \
+            --build-arg DOMAIN=$AWS_CA_DOMAIN \
             --build-arg REGION=$AWS_REGION \
             --build-arg REPO=$AWS_CA_REPO .
           """)
