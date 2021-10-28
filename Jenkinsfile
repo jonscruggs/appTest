@@ -31,11 +31,13 @@ pipeline {
             passwordVariable: 'AWS_SECRET_ACCESS_KEY',
             usernameVariable: 'AWS_ACCESS_KEY_ID'
           )]) {
+
             authToken = sh(
               returnStdout: true,
               script: 'aws codeartifact get-authorization-token \
               --domain $AWS_CA_DOMAIN \
               --query authorizationToken \
+              --domain-owner 966110654589 \
               --output text \
               --duration-seconds 900'
             ).trim()
