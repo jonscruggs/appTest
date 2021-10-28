@@ -13,7 +13,7 @@ RUN echo $CODEARTIFACT_TOKEN
 RUN echo $DOMAIN
 RUN echo $REGION
 RUN echo $REPO
-
+RUN echo https://aws:$CODEARTIFACT_TOKEN@$DOMAIN.d.codeartifact.$REGION.amazonaws.com/pypi/$REPO/simple/
 COPY . /
 
 #Manually configure the PIP client with the authenthication token
