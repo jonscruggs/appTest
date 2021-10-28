@@ -14,10 +14,12 @@ RUN echo $DOMAIN
 RUN echo $REGION
 RUN echo $REPO
 RUN echo https://aws:$CODEARTIFACT_TOKEN@$DOMAIN.d.codeartifact.$REGION.amazonaws.com/pypi/$REPO/simple/
+RUN pip config get global.index-url
 COPY . /
 
 #Manually configure the PIP client with the authenthication token
 RUN pip config set global.index-url "https://aws:$CODEARTIFACT_TOKEN@$DOMAIN.d.codeartifact.$REGION.amazonaws.com/pypi/$REPO/simple/"
+RUN pip config get global.index-url
 RUN pip install -r requirements.txt
 
 CMD ["python","application.py"]
