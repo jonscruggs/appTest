@@ -4,13 +4,13 @@
 pipeline {
   agent any
   environment {
-    AWS_ACCOUNT_ID = 'Your AWS Account ID'
-    AWS_REGION = 'Region you used for this project'
-    AWS_CA_DOMAIN = 'Name of your CodeArtifact domain'
-    AWS_CA_REPO = 'Name of your CodeArtifact repository'
-    AWS_STACK_NAME = 'Name of the CloudFormation stack'
-    CONTAINER_NAME = 'Container name provided to CloudFormation'
-    CREDENTIALS_ID = 'Jenkins credentials ID' 
+    AWS_ACCOUNT_ID = 'AKIA6B4FOWB6XQW5ZQ5Y'
+    AWS_REGION = 'us-east-1'
+    AWS_CA_DOMAIN = 'my-domain'
+    AWS_CA_REPO = 'my-repo'
+    AWS_STACK_NAME = 'appTest'
+    CONTAINER_NAME = 'appTestContainer'
+    CREDENTIALS_ID = '83ac0e51-cbff-432a-b317-fb5840448049' 
   }
   stages {
 
