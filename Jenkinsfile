@@ -9,7 +9,7 @@ pipeline {
     AWS_CA_DOMAIN = 'my-domain'
     AWS_CA_REPO = 'my-repo'
     AWS_STACK_NAME = 'Consumer'
-    CONTAINER_NAME = timeapp
+    CONTAINER_NAME = 'timeapp'
     CREDENTIALS_ID = '83ac0e51-cbff-432a-b317-fb5840448049' 
   }
   stages {
