@@ -4,7 +4,7 @@
 pipeline {
   agent any
   environment {
-    AWS_ACCOUNT_ID = 'AKIA6B4FOWB6XQW5ZQ5Y'
+    AWS_ACCOUNT_ID = '966110654589'
     AWS_REGION = 'us-east-1'
     AWS_CA_DOMAIN = 'my-domain'
     AWS_CA_REPO = 'my-repo'
@@ -37,7 +37,7 @@ pipeline {
               script: 'aws codeartifact get-authorization-token \
               --domain $AWS_CA_DOMAIN \
               --query authorizationToken \
-              --domain-owner 966110654589 \
+              --domain-owner $AWS_ACCOUNT_ID \
               --output text \
               --duration-seconds 900'
             ).trim()
